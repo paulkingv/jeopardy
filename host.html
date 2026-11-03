@@ -34,6 +34,8 @@
     <!-- Static copy -->
   <script type="text/javascript" language="Javascript" src="./bootstrap-static/3.3.5/js/bootstrap.min.js"></script>
 
+  <script type="text/javascript" language="Javascript" src="./js/players.js"></script>
+
   <script type="text/javascript" language="Javascript" src="./js/jeopardy-host.js"></script>
 
   <title>HTML Jeopardy</title>
@@ -46,17 +48,7 @@
     <div class="panel-body" id="main-board"></div>
 
     <div class="panel-footer">
-      <div class="col-md-4" id="player-1-score-div">
-        <h4>Red: <span id="player-1-score">$0</span></h4>
-      </div>
-
-      <div class="col-md-4" id="player-2-score-div">
-        <h4>Blue: <span id="player-2-score">$0</span></h4>
-      </div>
-
-      <div class="col-md-4" id="player-3-score-div">
-        <h4>Green: <span id="player-3-score">$0</span></h4>
-      </div>
+      <div id="scoreboard"></div>
 
       <div class="clearfix"></div>
     </div>
@@ -64,6 +56,7 @@
     <div class="panel-footer">
 	    <div class="col-md-4">
         	<button type="button" class="btn btn-info" id="score-adjust">Adjust Scores</button>
+	        <label style="margin-left:15px;font-weight:normal">Groups: <select id="group-count" class="form-control" style="display:inline-block;width:auto;color:black"></select></label>
 	    </div>
 	    <div class="col-md-4 text-center">
         	<h4 id="control-info">Control: <span id="control-player"></span></h4>
@@ -100,40 +93,7 @@
           </div>
         </div><!-- /.answer -->
 
-        <div id="scoring-buttons" class="text-center modal-footer">
-          <div class="score-button-group">
-            <div class="col-md-4">
-              <button type="button" class="btn btn-danger score-button" id="p1-wrong-button">
-                <span class="glyphicon glyphicon-remove"></span>P1
-              </button> 
-              <button type="button" class="btn btn-success score-button" id="p1-right-button">
-                <span class="glyphicon glyphicon-ok"></span>P1
-              </button>
-            </div>
-          </div>
-
-          <div class="score-button-group">
-            <div class="col-md-4">
-              <button type="button" class="btn btn-danger score-button" id="p2-wrong-button">
-                <span class="glyphicon glyphicon-remove"></span>P2
-              </button>
-              <button type="button" class="btn btn-success score-button" id="p2-right-button">
-                <span class="glyphicon glyphicon-ok"></span>P2
-              </button>
-            </div>
-          </div>
-
-          <div class="score-button-group">
-            <div class="col-md-4">
-              <button type="button" class="btn btn-danger score-button" id="p3-wrong-button">
-                <span class="glyphicon glyphicon-remove"></span>P3
-              </button>
-              <button type="button" class="btn btn-success score-button" id="p3-right-button">
-                <span class="glyphicon glyphicon-ok"></span>P3
-              </button>
-            </div>
-          </div>
-        </div><!-- /.scoring-buttons -->
+        <div id="scoring-buttons" class="text-center modal-footer"></div><!-- /.scoring-buttons -->
 
         <div id="question-timer" class="text-center modal-footer">
           <div id="timer-grid" class="text-center">
@@ -160,43 +120,12 @@
           <h4 class="modal-title text-center">Adjust Scores</h4>
         </div>
 
-        <div id="adjust-score-input-div" class="modal-body text-center">
-          <div class="score-button-group col-md-4">
-            <input type="text" class="form-control" placeholder="Player 1 Score" id="score-player-1-input" />
-          </div>
-
-          <div class="score-button-group col-md-4">
-            <input type="text" class="form-control" placeholder="Player 2 Score" id="score-player-2-input" />
-          </div>
-
-          <div class="score-button-group col-md-4">
-            <input type="text" class="form-control" placeholder="Player 3 Score" id="score-player-3-input" />
-          </div>
-
-          <div class="clearfix"></div>
-        </div>
+        <div id="adjust-score-input-div" class="modal-body text-center"></div>
 
         <div class="modal-header">
           <h4 class="modal-title text-center">Adjust Control</h4>
         </div>
-        <div id="adjust-control-input-div" class="modal-body text-center">
-          <div class="control-button-group col-md-4">
-            <label class="radio-inline"><input type="radio" placeholder="Player 1 Control" id="control-player-1-input" 
-            name="control-input" value="1"/></label>
-          </div>
-
-          <div class="control-button-group col-md-4">
-            <label class="radio-inline"><input type="radio" placeholder="Player 2 Control" id="control-player-2-input" 
-            name="control-input" value="2"/></label>
-          </div>
-
-          <div class="control-button-group col-md-4">
-            <label class="radio-inline"><input type="radio" placeholder="Player 3 Control" id="control-player-3-input" 
-            name="control-input" value="3"/></label>
-          </div>
-
-          <div class="clearfix"></div>
-        </div>
+        <div id="adjust-control-input-div" class="modal-body text-center"></div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal" id="score-adjust-save">
@@ -235,56 +164,9 @@
           <h4 class="modal-title text-center" id="final-jeopardy-modal-answer">Modal title</h4>
         </div>
 
-        <div id="final-jeopardy-score-input-div" class="modal-body text-center">
-          <div class="score-button-group col-md-4">
-            <input type="text" class="form-control" placeholder="Red Wager" id="wager-player-1-input" />
-          </div>
+        <div id="final-jeopardy-score-input-div" class="modal-body text-center"></div>
 
-          <div class="score-button-group col-md-4">
-            <input type="text" class="form-control" placeholder="Blue Wager" id="wager-player-2-input" />
-          </div>
-
-          <div class="score-button-group col-md-4">
-            <input type="text" class="form-control" placeholder="Green Wager" id="wager-player-3-input" />
-          </div>
-
-          <div class="clearfix"></div>
-        </div>
-
-        <div id="final-scoring-buttons" class="text-center modal-footer">
-          <div class="score-button-group">
-            <div class="col-md-4">
-              <button type="button" class="btn btn-danger final-score-button" id="final-p1-wrong-button">
-                <span class="glyphicon glyphicon-remove"></span>P1
-              </button> 
-              <button type="button" class="btn btn-success final-score-button" id="final-p1-right-button">
-                <span class="glyphicon glyphicon-ok"></span>P1
-              </button>
-            </div>
-          </div>
-
-          <div class="score-button-group">
-            <div class="col-md-4">
-              <button type="button" class="btn btn-danger final-score-button" id="final-p2-wrong-button">
-                <span class="glyphicon glyphicon-remove"></span>P2
-              </button>
-              <button type="button" class="btn btn-success final-score-button" id="final-p2-right-button">
-                <span class="glyphicon glyphicon-ok"></span>P2
-              </button>
-            </div>
-          </div>
-
-          <div class="score-button-group">
-            <div class="col-md-4">
-              <button type="button" class="btn btn-danger final-score-button" id="final-p3-wrong-button">
-                <span class="glyphicon glyphicon-remove"></span>P3
-              </button>
-              <button type="button" class="btn btn-success final-score-button" id="final-p3-right-button">
-                <span class="glyphicon glyphicon-ok"></span>P3
-              </button>
-            </div>
-          </div>
-        </div><!-- /.scoring-buttons -->
+        <div id="final-scoring-buttons" class="text-center modal-footer"></div><!-- /.scoring-buttons -->
 
         <div class="modal-footer text-center">
           <button type="button" class="btn btn-primary" data-dismiss="modal" id="final-score-close">

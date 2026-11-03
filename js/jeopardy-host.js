@@ -135,10 +135,8 @@ $(function(){
     });
     $('#score-adjust').click(function(){
         $('#score-adjust-modal').modal('show');
-        $('#score-player-1-input').val(score_player_1);
-        $('#score-player-2-input').val(score_player_2);
-        $('#score-player-3-input').val(score_player_3);
-        $("input[name=control-input][value=" + control + "]").attr('checked', 'checked');
+        eachPlayer(function(i){ $('#score-player-' + i + '-input').val(window['score_player_' + i]); });
+        $("input[name=control-input][value=" + control + "]").prop('checked', true);
         adjustScores();
     });
     $(document).on('click', '#final-jeopardy-question-button', function(){
@@ -177,12 +175,7 @@ $(function(){
 
 });
 
-var score_player_1 = 0;
-var score_player_2 = 0;
-var score_player_3 = 0;
-var control = 1;
 var rounds = ['jeopardy', 'double-jeopardy', 'final-jeopardy'];
-var playerTranslation = {1: 'Red', 2: 'Blue', 3: 'Green'}
 var currentBoard;
 var currentRound = 0;
 var isTimerActive = false;
@@ -217,8 +210,8 @@ function resetTimer() {
 }
 
 function adjustScores(){
-    $('#score-adjust-save').click(function(){
-        for (var i = 1; i < 4; i++) {
+    $('#score-adjust-save').unbind('click').click(function(){
+        for (var i = 1; i <= numPlayers; i++) {
             var scoreVariableName = 'score_player_' + i;
             var inputName = '#score-player-' + i + '-input';
             var newScoreValue = $(inputName).val();
@@ -233,22 +226,12 @@ function adjustScores(){
 }
 
 function updateScore(){
-	var score_text = '';
-	score_player_1 < 0 ? score_text = '-$' + Math.abs(score_player_1).toString() : score_text = "$" + score_player_1.toString();
-	score_player_1 < 0 ? $('#player-1-score').css('color', 'red') : $('#player-1-score').css('color', 'white');
-    $('#player-1-score').empty().text(score_text);
-
-	score_player_2 < 0 ? score_text = '-$' + Math.abs(score_player_2).toString() : score_text = "$" + score_player_2.toString();
-	score_player_2 < 0 ? $('#player-2-score').css('color', 'red') : $('#player-2-score').css('color', 'white');
-    $('#player-2-score').empty().text(score_text);
-
-	score_player_3 < 0 ? score_text = '-$' + Math.abs(score_player_3).toString() : score_text = "$" + score_player_3.toString();
-	score_player_3 < 0 ? $('#player-3-score').css('color', 'red') : $('#player-3-score').css('color', 'white');
-    $('#player-3-score').empty().text(score_text);
-
-	$('#control-player').empty().text(playerTranslation[control]);
-    //$('#player-2-score').empty().text(score_player_2);
-    //$('#player-3-score').empty().text(score_player_3);
+    eachPlayer(function(i){
+        var sc = window['score_player_' + i];
+        var text = sc < 0 ? '-$' + Math.abs(sc) : '$' + sc;
+        $('#player-' + i + '-score').text(text).css('color', sc < 0 ? 'red' : 'white');
+    });
+    $('#control-player').empty().text(playerTranslation[control]);
 }
 
 function loadBoard() {
@@ -270,15 +253,10 @@ function loadBoard() {
     }
     else {
 	    if (rounds[currentRound] === "double-jeopardy") {
-		    if (score_player_1 <= score_player_2 && score_player_1 <= score_player_3) {
-			    control = 1;
-		    }
-		    else if (score_player_2 <= score_player_3) {
-			    control = 2;
-		    }
-		    else {
-			    control = 3;
-		    }
+		    control = 1;
+	    for (var p = 2; p <= numPlayers; p++) {
+		    if (window['score_player_' + p] < window['score_player_' + control]) { control = p; }
+	    }
 	    }
         $('#control-player').empty().text(playerTranslation[control]);
         $('#end-round').show();
@@ -357,8 +335,9 @@ function handleAnswer(){
         e.stopPropagation();
         var buttonID = $(this).attr("id");
         var answerValue = parseInt($(this).data('value'));
-        var buttonAction = buttonID.substr(3, 5);
-        var playerNumber = buttonID.charAt(1);
+        var idMatch = buttonID.match(/^p(\d+)-(right|wrong)-button$/);
+        var buttonAction = idMatch[2];
+        var playerNumber = idMatch[1];
         var scoreVariable = 'score_player_' + playerNumber;
 
         buttonAction === 'right' ? window[scoreVariable] += answerValue
@@ -415,8 +394,9 @@ function handleFinalAnswer(){
     $('.final-score-button').unbind('click').click(function(e){
         e.stopPropagation();
         var buttonID = $(this).attr("id");
-        var buttonAction = buttonID.substr(9,5);
-        var playerNumber = buttonID.charAt(7);
+        var idMatch = buttonID.match(/^final-p(\d+)-(right|wrong)-button$/);
+        var buttonAction = idMatch[2];
+        var playerNumber = idMatch[1];
         var wagerID = '#wager-player-' + playerNumber + '-input';
         var wager = $(wagerID).val() == '' ? 0 : parseInt($(wagerID).val());
         var scoreVariable = 'score_player_' + playerNumber;
