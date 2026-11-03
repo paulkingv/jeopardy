@@ -1,0 +1,239 @@
+{
+    "jeopardy": [
+        {
+            "name": "PEOPLE",
+            "questions": [
+                {
+                    "question": "FAMOUS YOUTUBER WHO MADE HIS CHANNEL ON MARCH 6, 2012. HE IS MEMED A LOT AND ALSO MADE A PRETTY SUCCESSFUL HORROR MOVIE",
+                    "answer": "Who is Markiplier?",
+                    "value": 100
+                },
+                {
+                    "question": "THIS MAN IS THE PRECURSOR OF MODERN COMPUTERS. HE ALSO SOLVED ENCRYPTED MESSAGES DURING WWII",
+                    "answer": "Who is Alan Turing?",
+                    "value": 200
+                },
+                {
+                    "question": "THIS PERSON IS THE CEO OF THE WORLD'S LARGEST COMPANY BY MARKET CAPITALIZATION",
+                    "answer": "Who is Jensen Huang?",
+                    "value": 300
+                },
+                {
+                    "question": "THIS BRITISH PERSON CREATED ONE OF THE MOST IMPORTANT TECHNOLOGIES OF HUMAN HISTORY, AND DEVELOPED HTML, URLS AND THE HTTP PROTOCOL",
+                    "answer": "Who is Tim Berners-Lee?",
+                    "value": 400
+                },
+                {
+                    "question": "THIS MYSTERIOUS PSEUDONYMOUS FIGURE PUBLISHED THE FIRST BITCOIN WHITEPAPER IN 2008. THEIR IDENTITY, OTHER THAN THEIR PSEUDONYM, IS UNKNOWN",
+                    "answer": "Who is Satoshi Nakamoto?",
+                    "value": 500
+                }
+            ]
+        },
+        {
+            "name": "HARDWARE",
+            "questions": [
+                {
+                    "question": "THIS TYPE OF GPU CORE HAS A SPECIFIC PROGRAMMING LANGUAGE FOR IT, AND IS PROPRIETARY TO ONE GPU MANUFACTURER",
+                    "answer": "What are NVIDIA CUDA cores?",
+                    "value": 100
+                },
+                {
+                    "question": "THIS CPU ARCHITECTURE, FIRST DEVELOPED BY INTEL IN 1978 AND EXTENDED TO 64 BITS BY AMD, IS THE MOST POPULAR CPU ARCHITECTURE, EVEN TODAY",
+                    "answer": "What is x86-64?",
+                    "value": 200
+                },
+                {
+                    "question": "THE COMPANY WHO DESIGNS THIS CPU ARCHITECTURE, KNOWN FOR ITS HIGH EFFICIENCY AND REDUCED INSTRUCTION SET, WAS ORIGINALLY CO-FOUNDED BY APPLE, BUT IS NOW MAJORITY-OWNED BY JAPANESE CONGLOMERATE SOFTBANK",
+                    "answer": "What is ARM?",
+                    "value": 300
+                },
+                {
+                    "question": "THIS OPEN-SOURCE INSTRUCTION SET IS THE ROYALTY-FREE RIVAL TO X86 AND ARM",
+                    "answer": "What is RISC-V?",
+                    "value": 400
+                },
+                {
+                    "question": "THIS HIGH-SPEED INTERFACE CONNECTS EXPANSION CARDS DIRECTLY TO YOUR MOTHERBOARD, SUCH AS SOUND, NETWORK, AND GRAPHICS CARDS. EXTRA POINTS: HOW MANY LANES A FULL-SIZE GPU NEEDS",
+                    "answer": "What is PCIe x16? (Extra points: 16 lanes)",
+                    "value": 500
+                }
+            ]
+        },
+        {
+            "name": "SOFTWARE",
+            "questions": [
+                {
+                    "question": "THIS LINUX TEXT EDITOR IS INFAMOUS FOR TRAPPING NEW USERS WHO CAN'T FIGURE OUT HOW TO QUIT",
+                    "answer": "What is Vim?",
+                    "value": 100
+                },
+                {
+                    "question": "THIS SOFTWARE CAN BE USED BY BOTH ANIMATORS AND GAME DEVELOPERS WITH ITS INTEGRATED GAME ENGINE",
+                    "answer": "What is Blender?",
+                    "value": 200
+                },
+                {
+                    "question": "THIS SOFTWARE, USED PREDOMINANTLY BY STREAMERS AND CONTENT CREATORS, IS AN ESSENTIAL OPEN-SOURCE VIDEO CAPTURE TOOL ORIGINALLY RELEASED IN 2012",
+                    "answer": "What is OBS?",
+                    "value": 300
+                },
+                {
+                    "question": "THIS OPEN-SOURCE GAME ENGINE HAS BEEN USED TO MAKE GAMES SUCH AS KINITOPET, BUCKSHOT ROULETTE AND SLAY THE SPIRE 2",
+                    "answer": "What is Godot?",
+                    "value": 400,
+                    "daily-double": true
+                },
+                {
+                    "question": "THIS SOFTWARE EXECUTES YOUR C PROGRAM INSIDE A SYNTHETIC, SOFTWARE-SIMULATED CPU USING DYNAMIC BINARY TRANSLATION IN ORDER TO KEEP TRACK OF MEMORY LEAKS",
+                    "answer": "What is Valgrind?",
+                    "value": 500
+                }
+            ]
+        },
+        {
+            "name": "CODE & FRAMEWORKS",
+            "questions": [
+                {
+                    "question": "THIS LANGUAGE WAS CREATED BY TIM BERNERS-LEE TO DEFINE ELEMENTS SUCH AS HEADERS, LISTS, AND LINKS ON A WEBSITE, AND IS NOW IN ITS FIFTH VERSION",
+                    "answer": "What is HTML?",
+                    "value": 100
+                },
+                {
+                    "question": "THIS DYNAMICALLY TYPED LANGUAGE IS THE MOST POPULAR CODING LANGUAGE IN THE WORLD. EXTRA POINTS: EXPLAIN STATIC VS. DYNAMIC TYPING",
+                    "answer": "What is Python? (Extra points: static = types checked at compile time; dynamic = types checked at runtime)",
+                    "value": 200
+                },
+                {
+                    "question": "THIS PROGRAMMING LANGUAGE SITS JUST ONE STEP ABOVE THE 1S AND 0S A COMPUTER ACTUALLY RUNS",
+                    "answer": "What is Assembly?",
+                    "value": 300
+                },
+                {
+                    "question": "THIS OBJECT-ORIENTED LANGUAGE IS COMMONLY REFERRED TO AS \"C WITH CLASSES\"",
+                    "answer": "What is C++?",
+                    "value": 400
+                },
+                {
+                    "question": "THIS FRAMEWORK, DEVELOPED BY META, IS AN OPEN-SOURCE JAVASCRIPT LIBRARY USED TO BUILD WEBSITES AS REUSABLE COMPONENTS",
+                    "answer": "What is React?",
+                    "value": 500
+                }
+            ]
+        },
+        {
+            "name": "VIDEO GAMES",
+            "questions": [
+                {
+                    "question": "THIS GAME SERIES CREATED THE HIGHEST-GROSSING FRANCHISE IN THE HISTORY OF THE WORLD",
+                    "answer": "What is Pokémon?",
+                    "value": 100
+                },
+                {
+                    "question": "THIS GAME, RELEASED IN 2009, BECAME AN INTERNATIONAL PHENOMENON, AND IS THE BASE OF THE VERITY MODS (AND THE BROKEN SCRIPT)",
+                    "answer": "What is Minecraft?",
+                    "value": 200
+                },
+                {
+                    "question": "THIS GAME FACES YOU OFF AGAINST A FLOWER AS THE FIRST ENEMY. IT'S ALSO A CRITIQUE OF ITS OWN GAME GENRE",
+                    "answer": "What is Undertale?",
+                    "value": 300
+                },
+                {
+                    "question": "THIS 1998 GAME WAS THE FIRST 3D ENTRY FOR ITS SERIES, AND IS PRAISED AS ONE OF THE BEST GAMES OF ALL TIME",
+                    "answer": "What is The Legend of Zelda: Ocarina of Time?",
+                    "value": 400
+                },
+                {
+                    "question": "THIS GAME'S WORLD AND LORE WERE WRITTEN WITH GEORGE R. R. MARTIN, AND IT FEATURES CHARACTERS CALLED \"THE TARNISHED\"",
+                    "answer": "What is Elden Ring?",
+                    "value": 500
+                }
+            ]
+        }
+    ],
+    "double-jeopardy": [
+        {
+            "name": "PEOPLE II",
+            "questions": [
+                {
+                    "question": "THIS BELL LABS LEGEND CREATED THE C PROGRAMMING LANGUAGE AND CO-CREATED UNIX WITH KEN THOMPSON",
+                    "answer": "Who is Dennis Ritchie?",
+                    "value": 600
+                },
+                {
+                    "question": "THIS PERSON WAS RECENTLY QUOTED SAYING, \"A LOT OF PEOPLE WANT LOCAL INFERENCE, BUT FROM A GLOBAL ALLOCATION PERSPECTIVE, ACTUALLY, IT'S QUITE TERRIBLE TO HAVE EVERYBODY HAVE A BUNCH OF THE WORLD'S LIMITED SUPPLY OF DRAM SITTING IN THEIR OWN COMPUTER.\"",
+                    "answer": "Who is Sam Altman?",
+                    "value": 1000
+                }
+            ]
+        },
+        {
+            "name": "HARDWARE II",
+            "questions": [
+                {
+                    "question": "THIS CHEAP MICROCONTROLLER FROM ESPRESSIF HAS WI-FI AND BLUETOOTH BUILT IN, WHICH MAKES IT A FAVORITE FOR SMART HOME AND IOT PROJECTS",
+                    "answer": "What is the ESP32?",
+                    "value": 600
+                },
+                {
+                    "question": "THIS NEW TYPE OF RAM WILL REPLACE SODIMM IN LAPTOPS, WITH A DESIGN THAT ALLOWS SPEEDS UP TO 9600 MT/S. IT IS USED IN THE NEW FRAMEWORK 13 PRO",
+                    "answer": "What is LPCAMM2?",
+                    "value": 1000,
+                    "daily-double": true
+                }
+            ]
+        },
+        {
+            "name": "SOFTWARE II",
+            "questions": [
+                {
+                    "question": "THIS HYPERVISOR, CREATED BY ORACLE, IS USED IN THE 42 CURRICULUM DURING THE BORN2BEROOT PROJECT, AND IS ONE OF THE MOST POPULAR HYPERVISORS IN THE WORLD",
+                    "answer": "What is VirtualBox?",
+                    "value": 600
+                },
+                {
+                    "question": "THIS AI DECOMPILATION OF ADOBE SOFTWARE WAS MADE TO OPEN SOURCE WHAT WAS ONCE LOCKED BEHIND THE CREATIVE CLOUD SUBSCRIPTION",
+                    "answer": "What is ArtCraft?",
+                    "value": 1000
+                }
+            ]
+        },
+        {
+            "name": "CODE & FRAMEWORKS II",
+            "questions": [
+                {
+                    "question": "THIS LANGUAGE, WHOSE MASCOT IS A CRAB NAMED FERRIS, IS LOVED FOR MEMORY SAFETY WITHOUT A GARBAGE COLLECTOR",
+                    "answer": "What is Rust?",
+                    "value": 600
+                },
+                {
+                    "question": "THIS STATICALLY TYPED LANGUAGE CREATED BY MICROSOFT WAS DEVELOPED AS A LAYER ON TOP OF JAVASCRIPT AND DESIGNED FOR LARGE-SCALE APPLICATIONS",
+                    "answer": "What is TypeScript?",
+                    "value": 1000
+                }
+            ]
+        },
+        {
+            "name": "VIDEO GAMES II",
+            "questions": [
+                {
+                    "question": "THIS GAME, WHICH STARTED DEVELOPMENT IN 2013 AND IS IN OPEN ALPHA, ALLOWS YOU TO EXPLORE SPACE AT A SCALE NEVER SEEN BEFORE IN VIDEO GAMES",
+                    "answer": "What is Star Citizen?",
+                    "value": 600
+                },
+                {
+                    "question": "THIS GAME, CURRENTLY IN CLOSED ALPHA, FEATURES CHARACTERS FIGHTING FOR THEIR OWN WISHES IN AN ALTERNATIVE NEW YORK. HINT: ITS WORLD HAS A PLACE NAMED \"THE DEEP\"",
+                    "answer": "What is Deadlock?",
+                    "value": 1000,
+                    "daily-double": true
+                }
+            ]
+        }
+    ],
+    "final-jeopardy": {
+        "category": "OPERATING SYSTEMS",
+        "question": "IN 1991, A FINNISH STUDENT ANNOUNCED A FREE \"JUST A HOBBY\" KERNEL THAT NOW POWERS ANDROID PHONES AND MOST OF THE WORLD'S SERVERS",
+        "answer": "What is Linux (the Linux kernel, by Linus Torvalds)?"
+    }
+}
